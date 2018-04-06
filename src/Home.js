@@ -1,11 +1,15 @@
 import React from 'react';
+import styled from 'react-emotion'
 import logo from './react.svg';
-import './Home.css';
+
+const Container = styled('div')`
+  background: gray;
+`
 
 class Home extends React.Component {
   render() {
     return (
-      <div className="Home">
+      <Container className="Home">
         <div className="Home-header">
           <img src={logo} className="Home-logo" alt="logo" />
           <h2>Welcome to Razzle</h2>
@@ -25,7 +29,7 @@ class Home extends React.Component {
             <a href="https://palmer.chat">Community Slack</a>
           </li>
         </ul>
-      </div>
+      </Container>
     );
   }
 }
