@@ -17,8 +17,12 @@ const SkyBackground = styled('div')`
     z-index: -200;
 `
 
+const Stars = styled('img')`
+    height: 100%;
+`
+
 const Moonlight = styled('img')`
-    height: 90vh;
+    height: 120vh;
 `
 
 const parralaxStyle = {
@@ -54,7 +58,7 @@ class Home extends React.Component {
                             damping: 30
                         }
                         }}>
-                        <img src={stars} alt="Parallax Layer" />
+                        <Stars src={stars} alt="Parallax Layer" />
                     </ParallaxMousemove.Layer>
                     <ParallaxMousemove.Layer layerStyle={parralaxStyle.moonlightLayerStyle} config={{
                         xFactor: 0.10,
