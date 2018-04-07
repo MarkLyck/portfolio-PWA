@@ -27,7 +27,7 @@ server
           <!doctype html>
           <html lang="en">
             <head>
-              <title>Markdid.it</title>
+              <title>Mark Lyck - Web Developer</title>
 
               <meta charset="utf-8" />
               <meta http-equiv="X-UA-Compatible" content="IE=edge" />

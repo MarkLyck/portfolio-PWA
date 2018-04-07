@@ -7,10 +7,9 @@ module.exports = {
         if (!dev && target === 'web') {
             config.plugins.push(new OfflinePlugin({
                 relativePaths: false,
-                publicPath: config.output.publicPath,
+                publicPath: '/',
                 caches: 'all',
-                safeToUseOptionalCaches: true,
-                AppCache: false,
+                externals: [ '/' ],
                 ServiceWorker: {
                     output: './sw.js',
                     navigateFallbackURL: '/'
