@@ -27,10 +27,20 @@ server
           <!doctype html>
           <html lang="">
             <head>
-              <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-              <meta charset="utf-8" />
               <title>Markdid.it</title>
+
+              <meta charset="utf-8" />
+              <meta http-equiv="X-UA-Compatible" content="IE=edge" />
               <meta name="viewport" content="width=device-width, initial-scale=1">
+              <meta property="og:type" content="website">
+              <meta property="og:description" content="MARK LYCK PORTFOLIO / Web Developer">
+              <meta property="og:site_name" content="MARK LYCK PORTFOLIO">
+              <meta property="og:locale" content="en_us">
+              <meta property="og:url" content="markdid.it">
+              <meta property="og:title" content="MARK LYCK PORTFOLIO">
+
+              <meta name="description" content="MARK LYCK PORTFOLIO / Web Developer">
+
               ${assets.client.css
                 ? `<link rel="stylesheet" href="${assets.client.css}">`
                 : ''}
