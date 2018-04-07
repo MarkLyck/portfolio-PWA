@@ -32,13 +32,12 @@ server
               <meta charset="utf-8" />
               <meta http-equiv="X-UA-Compatible" content="IE=edge" />
               <meta name="viewport" content="width=device-width, initial-scale=1">
-              <link rel="manifest" href="/public/manifest.json">
-              <link rel="apple-touch-icon" sizes="180x180" href="/public/icons/touch/apple-touch-icon.png">
-              <link rel="icon" type="image/png" href="/public/icons/favicon-32x32.png" sizes="32x32">
-              <link rel="icon" type="image/png" href="/public/icons/favicon-16x16.png" sizes="16x16">
+              <link rel="manifest" href="/manifest.json">
+              <link rel="apple-touch-icon" sizes="180x180" href="/icons/touch/apple-touch-icon.png">
+              <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32">
+              <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16">
 
               <meta name="description" content="MARK LYCK PORTFOLIO / Web Developer">
-              <meta name="theme-color" content="#ED5B5F">
 
               <meta property="og:type" content="website">
               <meta property="og:description" content="MARK LYCK PORTFOLIO / Web Developer">
