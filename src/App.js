@@ -2,7 +2,7 @@ import React from 'react'
 import Route from 'react-router-dom/Route'
 import Switch from 'react-router-dom/Switch'
 import Home from './Portfolio'
-import './globalStyles'
+import './utils/globalStyles'
 
 const App = () => (
   <Switch>
