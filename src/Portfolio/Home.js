@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 import Parallax from 'parallax-js'
 import { Motion, spring } from 'react-motion'
 import Hero from './Hero'
@@ -63,7 +63,9 @@ const MoonLightParallax = styled('div')`
 
 const MoonLight = styled('div')`
     height: 100%;
-    background: url(${moonlight}) no-repeat;
+    background-image: url(${moonlight});
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: 100%;
 `
 
@@ -86,10 +88,10 @@ const StarImageContainer = styled('div')`
 class Home extends React.Component {
     componentDidMount() {
         const moonLightScene = document.getElementById('js-parallax-moonlight');
-        const parallaxMoonLightInstance = new Parallax(moonLightScene);
+        new Parallax(moonLightScene);
 
         const starsScene = document.getElementById('js-parallax-stars');
-        const parallaxStarsInstance = new Parallax(starsScene);
+        new Parallax(starsScene);
     }
 
     render() {
@@ -100,7 +102,11 @@ class Home extends React.Component {
                 <MoonLightBackground>
                     <MoonLightContainer>
                         <MoonLightParallax id="js-parallax-moonlight">
-                            <MoonLight data-depth="0.2" />
+                            <Motion defaultStyle={{ size: 0, opacity: 0 }} style={{ size: spring(100), opacity: spring(1) }}>
+                                {value => (
+                                    <MoonLight data-depth="0.2" style={{ backgroundSize: `${value.size}%`, opacity: value.opacity }}/>
+                                )}        
+                            </Motion>
                         </MoonLightParallax>
                     </MoonLightContainer>
                 </MoonLightBackground>

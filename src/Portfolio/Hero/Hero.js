@@ -75,87 +75,171 @@ const CloudFront3 = styled('div')`
     width: 88%;
 `
 
-const CloudBack1 =  styled('div')`
+const CloudBack1 = styled('div')`
     ${cloudCSS};
     top: -22%;
     right: -8%;
     width: 70%;
 `
 
-const CloudBack2 =  styled('div')`
+const CloudBack2 = styled('div')`
     ${cloudCSS};
     top: -6%;
     left: -39%;
     width: 88%;
 `
 
-const Moon =  styled('div')`
+const Moon = styled('div')`
     position: absolute;
     width: 100%;
     height: 100%;
 `
 
+const Content = styled('div')`
+    color: #fff;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    z-index: 200;
+    margin-left: 11%;
+    flex-direction: column;
+    display: flex;
+`
+
+const TitleText = styled('h1')`
+    font-size: 6rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.6rem;
+    font-family: "Helvetica";
+    font-weight: bold;
+    text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+    text-transform: uppercase;
+`
+
+const Divider = styled('div')`
+    display: inline-block;
+    margin-bottom: 2.5rem;
+`
+
+const Line = styled('span')`
+    display: block;
+    width: 88px;
+    height: 4px;
+    border-radius: 5px;
+    background: #ff4d5a;
+`
+
+const SubtitleText = styled('p')`
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    font-family: "Helvetica";
+    word-wrap: break-word;
+    white-space: normal;
+`
+
 class Home extends React.Component {
     componentDidMount() {
         const moonScene = document.getElementById('js-parallax-moon');
-        const parallaxMoonInstance = new Parallax(moonScene);
+        new Parallax(moonScene);
     }
 
     render() {
         return (
-            <React.Fragment>
-                <Motion defaultStyle={{left: 0}} style={{left: spring(30)}}>
-                    {value => (
-                        <MoonContainer style={{ left: `${value.left}%` }}>
-                        <MoonParallax id="js-parallax-moon">
-                            <Layer data-depth="0.3">
-                                <CloudBack1>
-                                    <img src={b_cloud1} alt="cloud" />
-                                </CloudBack1>
-                            </Layer>
+            <div className="hero">
+                <Content>
+                    <TitleText>
+                        Mark
+                        <br/>
+                        Lyck
+                    </TitleText>
+                    <Divider>
+                        <Line style={{ marginBottom: '1.4rem' }}/>
+                        <Line style={{ marginLeft: '54px' }}/>
+                    </Divider>
+                    <SubtitleText>
+                        Web developer /
+                        <br/>
+                        Software engineer
+                    </SubtitleText>
+                </Content>
+                <MoonContainer >
+                    <MoonParallax id="js-parallax-moon">
+                        <Layer data-depth="0.3">
+                            <CloudBack1>
+                                <Motion defaultStyle={{ x: 50, opacity: 0 }} style={{ x: spring(0), opacity: spring(1) }}>
+                                    {value => (
+                                        <img src={b_cloud1} alt="cloud" style={{ transform: `translateX(${value.x}%)`, opacity: value.opacity }} />
+                                    )}        
+                                </Motion>
+                            </CloudBack1>
+                        </Layer>
 
-                            <Layer data-depth="0.4">
-                                <CloudBack2>
-                                    <img src={b_cloud2} alt="cloud" />
-                                </CloudBack2>
-                            </Layer>                        
+                        <Layer data-depth="0.4">
+                            <CloudBack2>
+                                <Motion defaultStyle={{ x: 50, opacity: 0 }} style={{ x: spring(0, { stiffness: 50, damping: 10 }), opacity: spring(1) }}>
+                                    {value => (
+                                        <img src={b_cloud2} alt="cloud" style={{ transform: `translateX(${value.x}%)`, opacity: value.opacity }} />
+                                    )}        
+                                </Motion>
+                            </CloudBack2>
+                        </Layer>                        
 
-                            <Moon data-depth="0.5">
-                                    <img src={moon} alt="moon" />
-                            </Moon>
+                        <Moon data-depth="0.5">
+                            <Motion defaultStyle={{ x: 50, opacity: 0 }} style={{ x: spring(0, { stiffness: 250, damping: 50 }), opacity: spring(1, 170, 14) }}>
+                                {value => (
+                                    <img src={moon} alt="moon" style={{ transform: `translateX(${value.x}%)`, opacity: value.opacity }} />
+                                )}        
+                            </Motion>
+                        </Moon>
 
-                            <Layer data-depth="0.6">
-                                <CloudFront2>
-                                    <img src={cloud2} alt="cloud" />
-                                </CloudFront2>
-                            </Layer>
+                        <Layer data-depth="0.6">
+                            <CloudFront2>
+                                <Motion defaultStyle={{ x: 50, opacity: 0 }} style={{ x: spring(0, { stiffness: 100, damping: 20 }), opacity: spring(1) }}>
+                                    {value => (
+                                        <img src={cloud2} alt="cloud" style={{ transform: `translateX(${value.x}%)`, opacity: value.opacity }} />
+                                    )}        
+                                </Motion>
+                            </CloudFront2>
+                        </Layer>
 
-                            <Layer data-depth="0.7">
-                                <CloudFront3>
-                                    <img src={cloud3} alt="cloud" />
-                                </CloudFront3>
-                            </Layer>
+                        <Layer data-depth="0.7">
+                            <CloudFront3>
+                                <Motion defaultStyle={{ x: 50, opacity: 0 }} style={{ x: spring(0), opacity: spring(1) }}>
+                                    {value => (
+                                        <img src={cloud3} alt="cloud" style={{ transform: `translateX(${value.x}%)`, opacity: value.opacity }} />
+                                    )}        
+                                </Motion>
+                            </CloudFront3>
+                        </Layer>
 
-                            <Layer data-depth="0.2">
-                                <MoonTextWrapper>
-                                    <MoonText data-depth="0.5">
-                                        PORTFOLIO
-                                    </MoonText>
-                                </MoonTextWrapper>
-                            </Layer>
+                        <Layer data-depth="0.2">
+                            <MoonTextWrapper>
+                                <Motion defaultStyle={{ x: 50, opacity: 0 }} style={{ x: spring(0, { stiffness: 170, damping: 18 }), opacity: spring(1) }}>
+                                    {value => (
+                                        <MoonText data-depth="0.5" style={{ transform: `translateX(${value.x}%)`, opacity: value.opacity }}>
+                                            PORTFOLIO
+                                        </MoonText>
+                                    )}        
+                                </Motion>
+                            </MoonTextWrapper>
+                        </Layer>
 
-                            <Layer data-depth="0.8">
-                                <CloudFront1 >
-                                    <img src={cloud1} alt="cloud" />
-                                </CloudFront1>
-                            </Layer>
-                        </MoonParallax>
-                    </MoonContainer>
-                    )}
-            
-                    
-                </Motion>
-            </React.Fragment>
+                        <Layer data-depth="0.8">
+                            <CloudFront1 >
+                                <Motion defaultStyle={{ x: 70, opacity: 0 }} style={{ x: spring(0, { stiffness: 100, damping: 16 }), opacity: spring(1) }}>
+                                    {value => (
+                                        <img src={cloud1} alt="cloud" style={{ transform: `translateX(${value.x}%)`, opacity: value.opacity }} />
+                                    )}        
+                                </Motion>
+                            </CloudFront1>
+                        </Layer>
+                    </MoonParallax>
+                </MoonContainer>
+            </div>
         );
     }
 }
