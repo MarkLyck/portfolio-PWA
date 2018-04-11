@@ -1,22 +1,23 @@
-const path = require('path')
-const OfflinePlugin = require('offline-plugin')
+// const path = require('path')
+// const OfflinePlugin = require('offline-plugin')
 
-module.exports = {
-    modify: (config, { target, dev }, webpack) => {
+// module.exports = {
+//     modify: (config, { target, dev }, webpack) => {
 
-        if (!dev && target === 'web') {
-            config.plugins.push(new OfflinePlugin({
-                relativePaths: false,
-                publicPath: '/',
-                caches: 'all',
-                externals: [ '/' ],
-                ServiceWorker: {
-                    output: './sw.js',
-                    navigateFallbackURL: '/'
-                }
-            }))
-        }
+//         console.log(config.optimize)
+//         if (!dev && target === 'web') {
+//             config.plugins.push(new OfflinePlugin({
+//                 relativePaths: false,
+//                 publicPath: '/',
+//                 caches: 'all',
+//                 externals: [ '/' ],
+//                 ServiceWorker: {
+//                     output: './sw.js',
+//                     navigateFallbackURL: '/'
+//                 }
+//             }))
+//         }
 
-        return config;
-    },
-};
+//         return config;
+//     },
+// };
