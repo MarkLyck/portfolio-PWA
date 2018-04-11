@@ -1,18 +1,17 @@
-import React from 'react';
+import React from 'react'
 import styled from 'react-emotion'
 import Parallax from 'parallax-js'
 import { Motion, spring } from 'react-motion'
-import Hero from './Hero'
+import Hero from './00_Hero'
+import FormulaStocks from './01_FormulaStocks'
 
 import stars from './images/stars.svg'
 import moonlight from './images/moonlight.svg'
 
 const Container = styled('div')`
     width: 100vw;
-    height: 100vh;
     display: flex;
-    align-items: center;
-    position: relative;
+    flex-direction: column;
     color: #fff;
     overflow-x: hidden;
 `
@@ -98,7 +97,8 @@ class Home extends React.Component {
         return (
             <Container className="Home">
                 <Hero />
-                
+                <FormulaStocks />
+
                 <MoonLightBackground>
                     <MoonLightContainer>
                         <MoonLightParallax id="js-parallax-moonlight">

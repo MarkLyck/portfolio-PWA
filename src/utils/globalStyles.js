@@ -15,6 +15,9 @@ injectGlobal`
         color:#000;
         background:#FFF;
     }
+    body{
+        overflow-x: hidden;
+    }
     /*
         TODO remove settings on BODY since we can't namespace it.
     */

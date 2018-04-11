@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import styled, { css } from 'react-emotion'
 import Parallax from 'parallax-js'
-import { Motion, spring } from 'react-motion';
+import { Motion, spring } from 'react-motion'
 
 import moon from './images/moon.svg'
 import cloud1 from './images/cloud1.svg'
@@ -9,6 +9,11 @@ import cloud2 from './images/cloud2.svg'
 import cloud3 from './images/cloud3.svg'
 import b_cloud1 from './images/b_cloud01.svg'
 import b_cloud2 from './images/b_cloud02.svg'
+
+
+const HeroContainer = styled('div')`
+    height: 100vh;
+`
 
 const MoonContainer = styled('div')`
     position: absolute;
@@ -149,23 +154,41 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div className="hero">
+            <HeroContainer>
                 <Content>
-                    <TitleText>
-                        Mark
-                        <br/>
-                        Lyck
-                    </TitleText>
+                    <Motion defaultStyle={{ x: -100 }} style={{ x: spring(0) }}>
+                        {value => (
+                            <TitleText style={{ transform: `translateX(${value.x}%)` }}>
+                                Mark
+                                <br/>
+                                Lyck
+                            </TitleText>
+                        )}
+                    </Motion>
+
                     <Divider>
-                        <Line style={{ marginBottom: '1.4rem' }}/>
-                        <Line style={{ marginLeft: '54px' }}/>
+                        <Motion defaultStyle={{ x: 54, opacity: 0 }} style={{ x: spring(0), opacity: spring(1) }}>
+                            {value => (
+                                <Line style={{ marginBottom: '1.4rem', transform: `translateX(${value.x}px)`, opacity: value.opacity }}/>
+                            )}
+                        </Motion>
+                        <Motion defaultStyle={{ x: -54, opacity: 0 }} style={{ x: spring(0), opacity: spring(1) }}>
+                            {value => (
+                                <Line style={{ marginLeft: '54px', transform: `translateX(${value.x}px)`, opacity: value.opacity }}/>
+                            )}
+                        </Motion>
                     </Divider>
-                    <SubtitleText>
-                        Web developer /
-                        <br/>
-                        Software engineer
-                    </SubtitleText>
+                    <Motion defaultStyle={{ x: -250 }} style={{ x: spring(0) }}>
+                        {value => (
+                            <SubtitleText style={{ transform: `translateX(${value.x}%)` }}>
+                                Web developer /
+                                <br/>
+                                Software engineer
+                            </SubtitleText>
+                        )}
+                    </Motion>
                 </Content>
+
                 <MoonContainer >
                     <MoonParallax id="js-parallax-moon">
                         <Layer data-depth="0.3">
@@ -239,7 +262,7 @@ class Home extends React.Component {
                         </Layer>
                     </MoonParallax>
                 </MoonContainer>
-            </div>
+            </HeroContainer>
         );
     }
 }
