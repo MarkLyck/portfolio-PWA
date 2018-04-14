@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 import Parallax from 'parallax-js'
 import { Motion, spring } from 'react-motion'
-import LeftContent from 'components/leftContent'
+import LeftContent from 'components/LeftContent'
 
 import moon from './images/moon.svg'
 import cloud1 from './images/cloud1.svg'

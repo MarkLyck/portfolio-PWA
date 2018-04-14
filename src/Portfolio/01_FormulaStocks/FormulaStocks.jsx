@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'react-emotion'
-import LeftContent from 'components/leftContent'
+import LeftContent from 'components/LeftContent'
 
-const ShowCaseContainer = styled('div')`
+const ShowcaseContainer = styled('div')`
     height: 100vh;
     position: relative;
 `
@@ -14,7 +14,7 @@ class FormulaStocks extends React.Component {
 
     render() {
         return (
-            <ShowCaseContainer>
+            <ShowcaseContainer>
                 <LeftContent
                     title={<span>Formula<br/>Stocks</span>}
                     subtitle={
@@ -26,7 +26,7 @@ class FormulaStocks extends React.Component {
                     }
                     link="https://formulastocks.com"
                 />
-            </ShowCaseContainer>
+            </ShowcaseContainer>
         )
     }
 }
