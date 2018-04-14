@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 import Parallax from 'parallax-js'
 import { Motion, spring } from 'react-motion'
+import LeftContent from 'components/leftContent'
 
 import moon from './images/moon.svg'
 import cloud1 from './images/cloud1.svg'
@@ -10,9 +11,9 @@ import cloud3 from './images/cloud3.svg'
 import b_cloud1 from './images/b_cloud01.svg'
 import b_cloud2 from './images/b_cloud02.svg'
 
-
 const HeroContainer = styled('div')`
     height: 100vh;
+    position: relative;
 `
 
 const MoonContainer = styled('div')`
@@ -51,7 +52,7 @@ const MoonText = styled('p')`
     font-weight: bold;
     letter-spacing: 0.1em;
     text-shadow: 0 10px 15px rgba(2, 11, 22, 0.2);
-    color: #ff4d5a;
+    color: ${props => props.theme.primaryColor};
     font-family: "Helvetica";
 `
 
@@ -100,52 +101,6 @@ const Moon = styled('div')`
     height: 100%;
 `
 
-const Content = styled('div')`
-    color: #fff;
-    position: absolute;
-    overflow: hidden;
-    top: 50%;
-    transform: translate3d(0, -50%, 0);
-    z-index: 200;
-    margin-left: 11%;
-    flex-direction: column;
-    display: flex;
-`
-
-const TitleText = styled('h1')`
-    font-size: 6rem;
-    line-height: 1;
-    letter-spacing: 0.1em;
-    margin-bottom: 1.6rem;
-    font-family: "Helvetica";
-    font-weight: bold;
-    text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
-    text-transform: uppercase;
-`
-
-const Divider = styled('div')`
-    display: inline-block;
-    margin-bottom: 2.5rem;
-`
-
-const Line = styled('span')`
-    display: block;
-    width: 88px;
-    height: 4px;
-    border-radius: 5px;
-    background: #ff4d5a;
-`
-
-const SubtitleText = styled('p')`
-    color: #fff;
-    font-size: 1.5rem;
-    line-height: 1.5;
-    letter-spacing: 0.1em;
-    font-family: "Helvetica";
-    word-wrap: break-word;
-    white-space: normal;
-`
-
 class Home extends React.Component {
     componentDidMount() {
         const moonScene = document.getElementById('js-parallax-moon');
@@ -155,39 +110,7 @@ class Home extends React.Component {
     render() {
         return (
             <HeroContainer>
-                <Content>
-                    <Motion defaultStyle={{ x: -100 }} style={{ x: spring(0) }}>
-                        {value => (
-                            <TitleText style={{ transform: `translateX(${value.x}%)` }}>
-                                Mark
-                                <br/>
-                                Lyck
-                            </TitleText>
-                        )}
-                    </Motion>
-
-                    <Divider>
-                        <Motion defaultStyle={{ x: 54, opacity: 0 }} style={{ x: spring(0), opacity: spring(1) }}>
-                            {value => (
-                                <Line style={{ marginBottom: '1.4rem', transform: `translateX(${value.x}px)`, opacity: value.opacity }}/>
-                            )}
-                        </Motion>
-                        <Motion defaultStyle={{ x: -54, opacity: 0 }} style={{ x: spring(0), opacity: spring(1) }}>
-                            {value => (
-                                <Line style={{ marginLeft: '54px', transform: `translateX(${value.x}px)`, opacity: value.opacity }}/>
-                            )}
-                        </Motion>
-                    </Divider>
-                    <Motion defaultStyle={{ x: -250 }} style={{ x: spring(0) }}>
-                        {value => (
-                            <SubtitleText style={{ transform: `translateX(${value.x}%)` }}>
-                                Web developer /
-                                <br/>
-                                Software engineer
-                            </SubtitleText>
-                        )}
-                    </Motion>
-                </Content>
+                <LeftContent title={<span>Mark<br/>Lyck</span>} subtitle={<span>Web developer /<br/>Software engineer</span>}/>
 
                 <MoonContainer >
                     <MoonParallax id="js-parallax-moon">

@@ -1,23 +1,27 @@
-// const path = require('path')
+const path = require('path')
 // const OfflinePlugin = require('offline-plugin')
 
-// module.exports = {
-//     modify: (config, { target, dev }, webpack) => {
+module.exports = {
+    modify: (config, { target, dev }, webpack) => {
 
-//         console.log(config.optimize)
-//         if (!dev && target === 'web') {
-//             config.plugins.push(new OfflinePlugin({
-//                 relativePaths: false,
-//                 publicPath: '/',
-//                 caches: 'all',
-//                 externals: [ '/' ],
-//                 ServiceWorker: {
-//                     output: './sw.js',
-//                     navigateFallbackURL: '/'
-//                 }
-//             }))
-//         }
+        // add alias
+        config.resolve.alias.components = path.resolve(__dirname, 'src/components')
 
-//         return config;
-//     },
-// };
+        console.log(config.resolve)
+        // configuration for offline plugin (if it gets made compatible with webpack 4.5)
+        // if (!dev && target === 'web') {
+        //     config.plugins.push(new OfflinePlugin({
+        //         relativePaths: false,
+        //         publicPath: '/',
+        //         caches: 'all',
+        //         externals: [ '/' ],
+        //         ServiceWorker: {
+        //             output: './sw.js',
+        //             navigateFallbackURL: '/'
+        //         }
+        //     }))
+        // }
+
+        return config;
+    },
+};
