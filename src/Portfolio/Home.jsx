@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'react-emotion'
 import Parallax from 'parallax-js'
 import { Motion, spring } from 'react-motion'
+import Slide from 'components/Slide'
 import Hero from './00_Hero'
-import FormulaStocks from './01_FormulaStocks'
+import projets from '../common/projects'
 
 import stars from './images/stars.svg'
 import moonlight from './images/moonlight.svg'
@@ -12,6 +13,7 @@ const Container = styled.div`
     width: 100vw;
     display: flex;
     flex-direction: column;
+    position: relative;
     color: #fff;
     overflow-x: hidden;
 `
@@ -86,18 +88,19 @@ const StarImageContainer = styled.div`
 
 class Home extends React.Component {
     componentDidMount() {
-        const moonLightScene = document.getElementById('js-parallax-moonlight');
-        new Parallax(moonLightScene);
+        const moonLightScene = document.getElementById('js-parallax-moonlight')
+        new Parallax(moonLightScene)
 
-        const starsScene = document.getElementById('js-parallax-stars');
-        new Parallax(starsScene);
+        const starsScene = document.getElementById('js-parallax-stars')
+        new Parallax(starsScene)
     }
 
     render() {
         return (
-            <Container className="Home">
+            <Container className="Home" >
                 <Hero />
-                <FormulaStocks />
+
+                {projets.map((project, i) => <Slide project={project} index={i} />)}
 
                 <MoonLightBackground>
                     <MoonLightContainer>
@@ -121,7 +124,7 @@ class Home extends React.Component {
 
                 <SkyBackground />
             </Container>
-        );
+        )
     }
 }
 
