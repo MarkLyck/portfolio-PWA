@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 import { Motion, spring } from 'react-motion'
 
-const Content = styled('div')`
+const Content = styled.div`
     color: ${props => props.theme.whiteColor};
     position: absolute;
     overflow: hidden;
@@ -14,7 +14,7 @@ const Content = styled('div')`
     display: flex;
 `
 
-const TitleText = styled('h1')`
+const TitleText = styled.h1`
     font-size: 6rem;
     line-height: 1;
     letter-spacing: 0.1em;
@@ -25,12 +25,12 @@ const TitleText = styled('h1')`
     text-transform: uppercase;
 `
 
-const Divider = styled('div')`
+const Divider = styled.div`
     display: inline-block;
     margin-bottom: 2.5rem;
 `
 
-const Line = styled('span')`
+const Line = styled.span`
     display: block;
     width: 88px;
     height: 4px;
@@ -38,7 +38,7 @@ const Line = styled('span')`
     background: ${props => props.theme.primaryColor};
 `
 
-const SubtitleText = styled('p')`
+const SubtitleText = styled.p`
     color: ${props => props.theme.whiteColor};
     font-size: 1.5rem;
     line-height: 1.5;

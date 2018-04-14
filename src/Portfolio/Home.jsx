@@ -8,7 +8,7 @@ import FormulaStocks from './01_FormulaStocks'
 import stars from './images/stars.svg'
 import moonlight from './images/moonlight.svg'
 
-const Container = styled('div')`
+const Container = styled.div`
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -16,12 +16,12 @@ const Container = styled('div')`
     overflow-x: hidden;
 `
 
-const Layer = styled('div')`
+const Layer = styled.div`
     width: 100%;
     height: 100%;
 `
 
-const SkyBackground = styled('div')`
+const SkyBackground = styled.div`
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -34,7 +34,7 @@ const SkyBackground = styled('div')`
     z-index: -1;
 `
 
-const MoonLightBackground = styled('div')`
+const MoonLightBackground = styled.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -44,7 +44,7 @@ const MoonLightBackground = styled('div')`
     z-index: 0;
 `
 
-const MoonLightContainer = styled('div')`
+const MoonLightContainer = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
@@ -54,13 +54,13 @@ const MoonLightContainer = styled('div')`
     width: 1385px;
 `
 
-const MoonLightParallax = styled('div')`
+const MoonLightParallax = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
 `
 
-const MoonLight = styled('div')`
+const MoonLight = styled.div`
     height: 100%;
     background-image: url(${moonlight});
     background-position: center;
@@ -68,7 +68,7 @@ const MoonLight = styled('div')`
     background-size: 100%;
 `
 
-const StarsParallax = styled('div')`
+const StarsParallax = styled.div`
     width: 1300px;
     height: 100vh;
     position: fixed;
@@ -77,7 +77,7 @@ const StarsParallax = styled('div')`
     z-index: 0;
 `
 
-const StarImageContainer = styled('div')`
+const StarImageContainer = styled.div`
     width: 100%;
     height: 100%;
     display: flex;

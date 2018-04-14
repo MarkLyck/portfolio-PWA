@@ -11,12 +11,12 @@ import cloud3 from './images/cloud3.svg'
 import b_cloud1 from './images/b_cloud01.svg'
 import b_cloud2 from './images/b_cloud02.svg'
 
-const HeroContainer = styled('div')`
+const HeroContainer = styled.div`
     height: 100vh;
     position: relative;
 `
 
-const MoonContainer = styled('div')`
+const MoonContainer = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
@@ -30,24 +30,24 @@ const MoonContainer = styled('div')`
     z-index: 1;
 `
 
-const MoonParallax = styled('div')`
+const MoonParallax = styled.div`
     position: relative;
     width: 40%;
     height: 40%;
 `
 
-const Layer = styled('div')`
+const Layer = styled.div`
     width: 100%;
     height: 100%;
 `
 
-const MoonTextWrapper = styled('div')`
+const MoonTextWrapper = styled.div`
     position: absolute;
     left: -15%;
     top: 45%;
 `
 
-const MoonText = styled('p')`
+const MoonText = styled.p`
     font-size: 5rem;
     font-weight: bold;
     letter-spacing: 0.1em;
@@ -60,42 +60,42 @@ const cloudCSS = css`
     position: absolute;
 `
 
-const CloudFront1 = styled('div')`
+const CloudFront1 = styled.div`
     ${cloudCSS};
     top: 15%;
     right: -50%;
     width: 89%;
 `
 
-const CloudFront2 = styled('div')`
+const CloudFront2 = styled.div`
     ${cloudCSS};
     bottom: -19%;
     right: -29%;
     width: 90%;
 `
 
-const CloudFront3 = styled('div')`
+const CloudFront3 = styled.div`
     ${cloudCSS};
     bottom: -5%;
     left: -50%;
     width: 88%;
 `
 
-const CloudBack1 = styled('div')`
+const CloudBack1 = styled.div`
     ${cloudCSS};
     top: -22%;
     right: -8%;
     width: 70%;
 `
 
-const CloudBack2 = styled('div')`
+const CloudBack2 = styled.div`
     ${cloudCSS};
     top: -6%;
     left: -39%;
     width: 88%;
 `
 
-const Moon = styled('div')`
+const Moon = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;

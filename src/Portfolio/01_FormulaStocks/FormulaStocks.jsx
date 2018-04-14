@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 import LeftContent from 'components/LeftContent'
 
-const ShowcaseContainer = styled('div')`
+const ShowcaseContainer = styled.div`
     height: 100vh;
     position: relative;
 `
