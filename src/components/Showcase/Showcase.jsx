@@ -20,13 +20,13 @@ const ImageUnderlayer = styled.div`
     position: relative;
 `
 
-const ImageRedTransition = styled.div`
+const ImageColorTransition = styled.div`
     position: absolute;
     width: 150%;
     height: 100%;
     top: 0;
     left: 0;
-    background: ${props => props.theme.primaryColor};
+    background: ${props => props.color};
 `
 
 const ImageUnderlayerBackground = styled.div`
@@ -54,7 +54,7 @@ const PageNumber = styled.p`
     text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
 `
 
-const Showcase = ({ image, number, animate }) => {
+const Showcase = ({ image, number, color, animate }) => {
     return (
         <Motion defaultStyle={{ scale: 0 }} style={{ scale: spring(1, { stiffness: 50, damping: 17 })}}>
             {value => (
@@ -62,7 +62,7 @@ const Showcase = ({ image, number, animate }) => {
                     <ImageUnderlayer>
                         <Motion defaultStyle={{ x: -10 }} style={{ x: spring(100, {stiffness: 25, damping: 17}) }}>
                             {value => (
-                                <ImageRedTransition style={{ transform: `translateX(${value.x}%)`}} />
+                                <ImageColorTransition color={color} style={{ transform: `translateX(${value.x}%)`}} />
                             )}
                         </Motion>
                         <Motion defaultStyle={{ x: -20 }} style={{ x: spring(100, {stiffness: 35, damping: 17}) }}>

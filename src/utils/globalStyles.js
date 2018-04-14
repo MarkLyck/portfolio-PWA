@@ -132,6 +132,13 @@ injectGlobal`
     a {
         text-decoration: none;
     }
+
+    button {
+        outline: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
     /* YUI CSS Detection Stamp */
     #yui3-css-stamp.cssreset { display: none; }
 `

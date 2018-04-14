@@ -35,7 +35,7 @@ const Line = styled.span`
     width: 88px;
     height: 4px;
     border-radius: 5px;
-    background: ${props => props.theme.primaryColor};
+    background: ${props => props.color || props.theme.primaryColor};
 `
 
 const SubItemsContainer = styled.div`
@@ -50,7 +50,7 @@ const SubItemsContainer = styled.div`
     flex-direction: column;
 `
 
-const LeftContent = ({ title, subtitle, children }) => {
+const LeftContent = ({ title, subtitle, color, children }) => {
     return (
         <Content>
             <Motion defaultStyle={{ x: -100 }} style={{ x: spring(0) }}>
@@ -64,12 +64,12 @@ const LeftContent = ({ title, subtitle, children }) => {
             <Divider>
                 <Motion defaultStyle={{ x: 54, opacity: 0 }} style={{ x: spring(0), opacity: spring(1) }}>
                     {value => (
-                        <Line style={{ marginBottom: '1.4rem', transform: `translateX(${value.x}px)`, opacity: value.opacity }}/>
+                        <Line color={color} style={{ marginBottom: '1.4rem', transform: `translateX(${value.x}px)`, opacity: value.opacity }}/>
                     )}
                 </Motion>
                 <Motion defaultStyle={{ x: -54, opacity: 0 }} style={{ x: spring(0), opacity: spring(1) }}>
                     {value => (
-                        <Line style={{ marginLeft: '54px', transform: `translateX(${value.x}px)`, opacity: value.opacity }}/>
+                        <Line color={color} style={{ marginLeft: '54px', transform: `translateX(${value.x}px)`, opacity: value.opacity }}/>
                     )}
                 </Motion>
             </Divider>

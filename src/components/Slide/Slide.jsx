@@ -1,6 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import styled from 'react-emotion'
+import VisibilitySensor from 'react-visibility-sensor'
 import LeftContent from 'components/LeftContent'
 import Showcase from 'components/Showcase'
 
@@ -13,7 +13,7 @@ const ShowcaseContainer = styled.div`
 
 const Link = styled.a`
     color: ${props => props.theme.whiteColor};
-    background-color: ${props => props.theme.primaryColor};
+    background-color: ${props => props.color};
     font-size: 1.2rem;
     line-height: 1;
     font-weight: bold;
@@ -26,7 +26,7 @@ const Link = styled.a`
     }
 `
 
-class BringTheBand extends React.Component {
+class Slide extends React.Component {
     state = { animateIn: false, animateOut: false }
 
     handleScroll = (e) => {
@@ -45,22 +45,25 @@ class BringTheBand extends React.Component {
     }
 
     render() {
-        const { project, index } = this.props
+        const { slide, index, handleVisibilityChange } = this.props
         return (
-            <ShowcaseContainer>
-                <LeftContent
-                    title={project.title}
-                    subtitle={project.subtitle}
-                    children={
-                        <React.Fragment>
-                            {project.website ? <Link href={project.website} target="_blank" rel="noopener">Website</Link> : ''}
-                        </React.Fragment>
-                    }
-                />
-                <Showcase image={project.screenshot} number={String(index + 1).padStart(2, '0')} />
-            </ShowcaseContainer>
+            <VisibilitySensor onChange={isVisible => handleVisibilityChange(isVisible, index)}>
+                <ShowcaseContainer>
+                    <LeftContent
+                        title={slide.title}
+                        subtitle={slide.subtitle}
+                        color={slide.color}
+                        children={
+                            <React.Fragment>
+                                {slide.website ? <Link href={slide.website} color={slide.color} target="_blank" rel="noopener">Website</Link> : ''}
+                            </React.Fragment>
+                        }
+                    />
+                    <Showcase image={slide.image} number={String(index + 1).padStart(2, '0')} color={slide.color} />
+                </ShowcaseContainer>
+            </VisibilitySensor>
         )
     }
 }
 
-export default BringTheBand
+export default Slide

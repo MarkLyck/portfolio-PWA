@@ -3,8 +3,9 @@ import styled from 'react-emotion'
 import Parallax from 'parallax-js'
 import { Motion, spring } from 'react-motion'
 import Slide from 'components/Slide'
+import ScrollNavigation from 'components/ScrollNavigation'
 import Hero from './00_Hero'
-import projets from '../common/projects'
+import slides from '../common/slides'
 
 import stars from './images/stars.svg'
 import moonlight from './images/moonlight.svg'
@@ -87,20 +88,50 @@ const StarImageContainer = styled.div`
 `
 
 class Home extends React.Component {
+    state = {
+        hasRefs: false,
+        visibleSlides: [],
+    }
+
     componentDidMount() {
+        console.log(this['1'])
         const moonLightScene = document.getElementById('js-parallax-moonlight')
         new Parallax(moonLightScene)
 
         const starsScene = document.getElementById('js-parallax-stars')
         new Parallax(starsScene)
+
+        this.setState({ hasRefs: true })
+    }
+
+    handleVisibilityChange = (isVisible, index) => {
+        let visibleSlides = this.state.visibleSlides
+        if (isVisible) {
+            visibleSlides.push(index + 1)
+        } else {
+            visibleSlides = visibleSlides.filter(item => item !== index + 1)
+        }
+
+        this.setState({ visibleSlides })
     }
 
     render() {
+        console.log(this.state.visibleSlides)
         return (
             <Container className="Home" >
-                <Hero />
+                <Hero ref={(section) => { this.heroSection = section; }} />
 
-                {projets.map((project, i) => <Slide project={project} index={i} />)}
+                {slides.map((slide, i) => (
+                    <Slide
+                        slide={slide}
+                        index={i}
+                        key={slide.id}
+                        handleVisibilityChange={this.handleVisibilityChange}
+                        ref={(section) => { this[slide.id] = section; }}
+                    />)
+                )}
+
+                {this['1'] ? <ScrollNavigation keys={slides.map(s => s.id)} sections={slides.map(slide => this[slide.id])} heroSection={this.heroSection} /> : ''}
 
                 <MoonLightBackground>
                     <MoonLightContainer>
