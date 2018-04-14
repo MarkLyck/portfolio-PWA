@@ -128,6 +128,10 @@ injectGlobal`
     legend {
         color:#000;
     }
+
+    a {
+        text-decoration: none;
+    }
     /* YUI CSS Detection Stamp */
     #yui3-css-stamp.cssreset { display: none; }
 `

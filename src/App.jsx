@@ -7,6 +7,7 @@ import './utils/globalStyles'
 
 const theme = {
   primaryColor: '#ff4d5a',
+  secondaryColor: '#072142',
   whiteColor: '#fff',
 }
 

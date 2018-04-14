@@ -46,6 +46,8 @@ server
               <meta property="og:locale" content="en_us">
               <meta property="og:url" content="Mark Lyck">
               <meta property="og:title" content="MARK LYCK PORTFOLIO">
+
+              <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
               
               ${assets.client.css
                 ? `<link rel="stylesheet" href="${assets.client.css}">`

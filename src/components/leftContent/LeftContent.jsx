@@ -38,7 +38,7 @@ const Line = styled.span`
     background: ${props => props.theme.primaryColor};
 `
 
-const SubtitleText = styled.p`
+const SubItemsContainer = styled.div`
     color: ${props => props.theme.whiteColor};
     font-size: 1.5rem;
     line-height: 1.5;
@@ -46,9 +46,11 @@ const SubtitleText = styled.p`
     font-family: "Helvetica";
     word-wrap: break-word;
     white-space: normal;
+    display: flex;
+    flex-direction: column;
 `
 
-const LeftContent = ({ title, subtitle }) => {
+const LeftContent = ({ title, subtitle, children }) => {
     return (
         <Content>
             <Motion defaultStyle={{ x: -100 }} style={{ x: spring(0) }}>
@@ -73,9 +75,10 @@ const LeftContent = ({ title, subtitle }) => {
             </Divider>
             <Motion defaultStyle={{ x: -250 }} style={{ x: spring(0) }}>
                 {value => (
-                    <SubtitleText style={{ transform: `translateX(${value.x}%)` }}>
+                    <SubItemsContainer style={{ transform: `translateX(${value.x}%)` }}>
                         {subtitle}
-                    </SubtitleText>
+                        {children}
+                    </SubItemsContainer>
                 )}
             </Motion>
         </Content>

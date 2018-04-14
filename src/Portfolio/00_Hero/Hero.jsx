@@ -110,7 +110,10 @@ class Home extends React.Component {
     render() {
         return (
             <HeroContainer>
-                <LeftContent title={<span>Mark<br/>Lyck</span>} subtitle={<span>Web developer /<br/>Software engineer</span>}/>
+                <LeftContent
+                    title={<span>Mark<br/>Lyck</span>}
+                    subtitle={<span>Web developer /<br/>Software engineer</span>}
+                />
 
                 <MoonContainer >
                     <MoonParallax id="js-parallax-moon">
