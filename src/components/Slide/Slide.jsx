@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'react-emotion'
-import VisibilitySensor from 'react-visibility-sensor'
 import LeftContent from 'components/LeftContent'
 import Showcase from 'components/Showcase'
 
@@ -47,21 +46,19 @@ class Slide extends React.Component {
     render() {
         const { slide, index, handleVisibilityChange } = this.props
         return (
-            <VisibilitySensor onChange={isVisible => handleVisibilityChange(isVisible, index)}>
-                <ShowcaseContainer>
-                    <LeftContent
-                        title={slide.title}
-                        subtitle={slide.subtitle}
-                        color={slide.color}
-                        children={
-                            <React.Fragment>
-                                {slide.website ? <Link href={slide.website} color={slide.color} target="_blank" rel="noopener">Website</Link> : ''}
-                            </React.Fragment>
-                        }
-                    />
-                    <Showcase image={slide.image} number={String(index + 1).padStart(2, '0')} color={slide.color} />
-                </ShowcaseContainer>
-            </VisibilitySensor>
+            <ShowcaseContainer>
+                <LeftContent
+                    title={slide.title}
+                    subtitle={slide.subtitle}
+                    color={slide.color}
+                    children={
+                        <React.Fragment>
+                            {slide.website ? <Link href={slide.website} color={slide.color} target="_blank" rel="noopener">Website</Link> : ''}
+                        </React.Fragment>
+                    }
+                />
+                <Showcase image={slide.image} number={String(index + 1).padStart(2, '0')} color={slide.color} />
+            </ShowcaseContainer>
         )
     }
 }
