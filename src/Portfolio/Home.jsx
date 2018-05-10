@@ -94,7 +94,6 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this['1'])
         const moonLightScene = document.getElementById('js-parallax-moonlight')
         new Parallax(moonLightScene)
 
@@ -116,7 +115,6 @@ class Home extends React.Component {
     }
 
     render() {
-        console.log(this.state.visibleSlides)
         return (
             <Container className="Home" >
                 <Hero ref={(section) => { this.heroSection = section; }} />
