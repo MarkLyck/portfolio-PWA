@@ -21,12 +21,9 @@ const Link = styled.a`
     border-radius: 50px;
     margin: 16px auto 0 0;
     transition: all 0.1s ease-in;
-
-    font-size: 16px;
-    background: transparent;
-    background-color: ${props => props.color};
     border: 1px solid ${props => props.color};
     color: #FFFFFF;
+    text-shadow: none;
     box-shadow: 0 8px 0 0 ${props => darken(0.15, props.color)};
     &:hover {
         border: 1px solid ${props => darken(-0.05, props.color)};
@@ -41,23 +38,23 @@ const Link = styled.a`
 class Slide extends React.Component {
     state = { animateIn: false, animateOut: false }
 
-    handleScroll = (e) => {
-        // console.log('y', window.pageYOffset)
-        // console.log('top', ReactDOM.findDOMNode(this).getBoundingClientRect().top)
-        // console.log('bottom', ReactDOM.findDOMNode(this).getBoundingClientRect().bottom)
-    }
+    // handleScroll = (e) => {
+    //     // console.log('y', window.pageYOffset)
+    //     // console.log('top', ReactDOM.findDOMNode(this).getBoundingClientRect().top)
+    //     // console.log('bottom', ReactDOM.findDOMNode(this).getBoundingClientRect().bottom)
+    // }
 
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll)
-        console.log('Slide did mount')
-    }
+    // componentDidMount() {
+    //     window.addEventListener('scroll', this.handleScroll)
+    //     console.log('Slide did mount')
+    // }
 
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll)
-    }
+    // componentWillUnmount() {
+    //     window.removeEventListener('scroll', this.handleScroll)
+    // }
 
     render() {
-        const { slide, index, handleVisibilityChange } = this.props
+        const { slide, index } = this.props
         return (
             <ShowcaseContainer>
                 <LeftContent
