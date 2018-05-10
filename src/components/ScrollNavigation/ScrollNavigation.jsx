@@ -13,13 +13,29 @@ const ScrollNavContainer = styled.div`
 `
 
 const ScrollButton = styled.button`
-    background: ${props => props.theme.whiteColor};
+    background-color: transparent;
+    border: transparent 12px solid;
+    box-sizing: content-box;
     height: 3px;
     width: 16px;
-    border: none;
     padding: 0;
-    margin-bottom: 40px;
+    position: relative;
+    margin-bottom: 24px;
     transition: all 0.2s;
+
+    &:hover {
+        width: 32px;
+    }
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: ${props => props.theme.whiteColor};
+    }
 `
 
 class Navigation extends React.Component {
