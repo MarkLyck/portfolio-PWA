@@ -31,7 +31,6 @@ export default [
         subtitle: (<span>
                         hello@markdid.it
                         <br/>
-                        artist to join the festival
                     </span>),
         website: '',
         image: '/media/contact.jpg',
