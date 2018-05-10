@@ -9,9 +9,14 @@ const Content = styled.div`
     top: 50%;
     transform: translate3d(0, -50%, 0);
     z-index: 200;
-    margin-left: 11%;
+    margin-left: 180px;
+    padding-bottom: 8px;
     flex-direction: column;
     display: flex;
+
+    @media (max-width: 700px) {
+        margin-left: 48px;
+    }
 `
 
 const TitleText = styled.h1`
@@ -23,6 +28,10 @@ const TitleText = styled.h1`
     font-weight: bold;
     text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
     text-transform: uppercase;
+
+    @media (max-width: 700px) {
+        font-size: 3rem;
+    }
 `
 
 const Divider = styled.div`
@@ -48,6 +57,7 @@ const SubItemsContainer = styled.div`
     white-space: normal;
     display: flex;
     flex-direction: column;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.8);
 `
 
 const LeftContent = ({ title, subtitle, color, children }) => {

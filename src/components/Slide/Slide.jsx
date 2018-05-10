@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { darken } from 'polished'
 import LeftContent from 'components/LeftContent'
 import Showcase from 'components/Showcase'
 
@@ -19,9 +20,21 @@ const Link = styled.a`
     padding: 18px 32px;
     border-radius: 50px;
     margin: 16px auto 0 0;
-    transition: all 0.2s;
+    transition: all 0.1s ease-in;
+
+    font-size: 16px;
+    background: transparent;
+    background-color: ${props => props.color};
+    border: 1px solid ${props => props.color};
+    color: #FFFFFF;
+    box-shadow: 0 8px 0 0 ${props => darken(0.15, props.color)};
     &:hover {
-        transform: translateY(-5px);
+        border: 1px solid ${props => darken(-0.05, props.color)};
+        background-color: ${props => darken(-0.05, props.color)};
+    }
+    &:active {
+        transform: translateY(0.25rem);
+        box-shadow: 0 0 0 0 ${props => darken(0.1, props.color)};
     }
 `
 

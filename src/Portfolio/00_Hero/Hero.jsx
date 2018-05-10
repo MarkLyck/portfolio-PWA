@@ -28,6 +28,11 @@ const MoonContainer = styled.div`
     align-items: center;
     justify-content: center;
     z-index: 1;
+
+    @media (max-width: 700px) {
+        left: -200px;
+        transform: scale(0.8);
+    }
 `
 
 const MoonParallax = styled.div`
