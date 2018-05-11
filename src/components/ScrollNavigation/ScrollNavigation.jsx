@@ -71,9 +71,9 @@ class Navigation extends React.Component {
 
         return (
             <ScrollNavContainer>
-                <ScrollButton onClick={() => this.handleClick(heroSection)} key={heroSection} />
+                <ScrollButton aria-label="Navigation-button" onClick={() => this.handleClick(heroSection)} key={heroSection} />
                 {sections.map((section, i) => (
-                    <ScrollButton onClick={() => this.handleClick(section)} key={keys[i]} />)
+                    <ScrollButton aria-label="Navigation-button" onClick={() => this.handleClick(section)} key={keys[i]} />)
                 )}
             </ScrollNavContainer>
         )
