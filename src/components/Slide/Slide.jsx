@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { darken } from 'polished'
 import LeftContent from 'components/LeftContent'
 import Showcase from 'components/Showcase'
 
@@ -19,29 +20,38 @@ const Link = styled.a`
     padding: 18px 32px;
     border-radius: 50px;
     margin: 16px auto 0 0;
-    transition: all 0.2s;
+    transition: all 0.1s ease-in;
+    border: 1px solid ${props => props.color};
+    color: #FFFFFF;
+    text-shadow: none;
+    box-shadow: 0 8px 0 0 ${props => darken(0.15, props.color)};
     &:hover {
-        transform: translateY(-5px);
+        border: 1px solid ${props => darken(-0.05, props.color)};
+        background-color: ${props => darken(-0.05, props.color)};
+    }
+    &:active {
+        transform: translateY(0.25rem);
+        box-shadow: 0 0 0 0 ${props => darken(0.1, props.color)};
     }
 `
 
 class Slide extends React.Component {
     state = { animateIn: false, animateOut: false }
 
-    handleScroll = (e) => {
-        // console.log('y', window.pageYOffset)
-        // console.log('top', ReactDOM.findDOMNode(this).getBoundingClientRect().top)
-        // console.log('bottom', ReactDOM.findDOMNode(this).getBoundingClientRect().bottom)
-    }
+    // handleScroll = (e) => {
+    //     // console.log('y', window.pageYOffset)
+    //     // console.log('top', ReactDOM.findDOMNode(this).getBoundingClientRect().top)
+    //     // console.log('bottom', ReactDOM.findDOMNode(this).getBoundingClientRect().bottom)
+    // }
 
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll)
-        console.log('Slide did mount')
-    }
+    // componentDidMount() {
+    //     window.addEventListener('scroll', this.handleScroll)
+    //     console.log('Slide did mount')
+    // }
 
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll)
-    }
+    // componentWillUnmount() {
+    //     window.removeEventListener('scroll', this.handleScroll)
+    // }
 
     render() {
         const { slide, index } = this.props

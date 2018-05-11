@@ -10,6 +10,28 @@ const ScrollNavContainer = styled.div`
     z-index: 100;
     display: flex;
     flex-direction: column;
+    
+
+    @media (max-width: 700px) {
+        top: unset;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        flex-direction: row;
+        align-items: flex-end;
+        height: 32px;
+        
+
+        button {
+            height: 16px;
+            width: 3px;
+            margin: 0 16px 24px;
+            &:hover {
+                height: 32px;
+                width: 3px;
+            }
+        }
+    }
 `
 
 const ScrollButton = styled.button`

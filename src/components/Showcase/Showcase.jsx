@@ -46,6 +46,10 @@ const PageNumBerContainer = styled.div`
     font-size: 9rem;
     color: ${props => props.theme.whiteColor};
     font-family: "Abril Fatface";
+
+    @media (max-width: 700px) {
+        font-size: 6rem;
+    }
 `
 
 const PageNumber = styled.p`

@@ -545,7 +545,7 @@ babel-code-frame@6.26.0, babel-code-frame@^6.22.0, babel-code-frame@^6.26.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-core@6.25.0:
+babel-core@6.25.0, babel-core@^6.0.0:
   version "6.25.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/babel-core/-/babel-core-6.25.0.tgz#7dd42b0463c742e9d5296deb3ec67a9322dad729"
   dependencies:
@@ -569,7 +569,7 @@ babel-core@6.25.0:
     slash "^1.0.0"
     source-map "^0.5.0"
 
-babel-core@^6.0.0, babel-core@^6.26.0:
+babel-core@^6.26.0:
   version "6.26.3"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/babel-core/-/babel-core-6.26.3.tgz#b2e2f09e342d0f0c88e2f02e067794125e75c207"
   dependencies:
@@ -1151,9 +1151,15 @@ babel-preset-jest@^20.0.3:
   dependencies:
     babel-plugin-jest-hoist "^20.0.3"
 
+<<<<<<< HEAD
 babel-preset-razzle@^2.0.0-alpha.7:
   version "2.0.0-alpha.12"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/babel-preset-razzle/-/babel-preset-razzle-2.0.0-alpha.12.tgz#acb14d169775633a52f4899a75d3ca31032e5e70"
+=======
+babel-preset-razzle@^2.0.0-alpha.11:
+  version "2.0.0-y.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-razzle/-/babel-preset-razzle-2.0.0-y.0.tgz#278bb69171a0f994d9bc42c8fe1cf9a70d19fc6f"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
   dependencies:
     babel-plugin-dynamic-import-node "1.0.1"
     babel-plugin-syntax-dynamic-import "6.18.0"
@@ -1555,11 +1561,19 @@ caniuse-api@^1.5.2:
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000839"
+<<<<<<< HEAD
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/caniuse-db/-/caniuse-db-1.0.30000839.tgz#55a86e402c74ae17149707bea3ea399522233497"
 
 caniuse-lite@^1.0.30000670, caniuse-lite@^1.0.30000792:
   version "1.0.30000839"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/caniuse-lite/-/caniuse-lite-1.0.30000839.tgz#41fcc036cf1cb77a0e0be041210f77f1ced44a7b"
+=======
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000839.tgz#55a86e402c74ae17149707bea3ea399522233497"
+
+caniuse-lite@^1.0.30000670, caniuse-lite@^1.0.30000792:
+  version "1.0.30000839"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000839.tgz#41fcc036cf1cb77a0e0be041210f77f1ced44a7b"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -2869,7 +2883,7 @@ file-entry-cache@^2.0.0:
     flat-cache "^1.2.1"
     object-assign "^4.0.1"
 
-file-loader@1.1.11:
+file-loader@^1.1.11:
   version "1.1.11"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/file-loader/-/file-loader-1.1.11.tgz#6fe886449b0f2a936e43cabaac0cdbfb369506f8"
   dependencies:
@@ -4535,8 +4549,13 @@ macaddress@^0.2.8:
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/macaddress/-/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
 
 make-dir@^1.0.0:
+<<<<<<< HEAD
   version "1.2.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/make-dir/-/make-dir-1.2.0.tgz#6d6a49eead4aae296c53bbf3a1a008bd6c89469b"
+=======
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
   dependencies:
     pify "^3.0.0"
 
@@ -5344,6 +5363,10 @@ pluralize@^4.0.0:
   version "4.0.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/pluralize/-/pluralize-4.0.0.tgz#59b708c1c0190a2f692f1c7618c446b052fd1762"
 
+polished@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-1.9.2.tgz#d705cac66f3a3ed1bd38aad863e2c1e269baf6b6"
+
 portfinder@^1.0.9:
   version "1.0.13"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
@@ -5826,18 +5849,30 @@ raw-body@2.3.2:
     iconv-lite "0.4.19"
     unpipe "1.0.0"
 
+<<<<<<< HEAD
 razzle-dev-utils@^2.0.0-alpha.7:
   version "2.0.0-alpha.12"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/razzle-dev-utils/-/razzle-dev-utils-2.0.0-alpha.12.tgz#e2cff1cc6825a10eca0370e91e518d0e2369f63d"
+=======
+razzle-dev-utils@^2.0.0-alpha.11:
+  version "2.0.0-y.0"
+  resolved "https://registry.yarnpkg.com/razzle-dev-utils/-/razzle-dev-utils-2.0.0-y.0.tgz#612646a80fa00e36c475ec6ad6d6b949c82f0405"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
   dependencies:
     chalk "1.1.3"
     react-dev-utils "4.1.0"
     sockjs-client "1.1.4"
     strip-ansi "4.0.0"
 
+<<<<<<< HEAD
 razzle@^2.0.0-alpha.7:
   version "2.0.0-alpha.7"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/razzle/-/razzle-2.0.0-alpha.7.tgz#b72f1094c8541eff9744e41aae5964ba67b172be"
+=======
+razzle@next:
+  version "2.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/razzle/-/razzle-2.0.0-alpha.11.tgz#ce24293eeac02097e2a1f132cd4fe0f6755b7aed"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
   dependencies:
     assets-webpack-plugin "3.5.1"
     autoprefixer "7.1.1"
@@ -5845,7 +5880,11 @@ razzle@^2.0.0-alpha.7:
     babel-eslint "7.2.3"
     babel-jest "20.0.3"
     babel-loader "7.1.1"
+<<<<<<< HEAD
     babel-preset-razzle "^2.0.0-alpha.7"
+=======
+    babel-preset-razzle "^2.0.0-alpha.11"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
     chalk "1.1.3"
     css-loader "0.28.11"
     dotenv "4.0.0"
@@ -5856,7 +5895,7 @@ razzle@^2.0.0-alpha.7:
     eslint-plugin-import "^2.7.0"
     eslint-plugin-jsx-a11y "^5.1.1"
     eslint-plugin-react "^7.3.0"
-    file-loader "1.1.11"
+    file-loader "^1.1.11"
     fs-extra "3.0.1"
     jest "20.0.4"
     mini-css-extract-plugin "^0.4.0"
@@ -5865,7 +5904,11 @@ razzle@^2.0.0-alpha.7:
     postcss-loader "^2.1.3"
     promise "^8.0.1"
     raf "^3.4.0"
+<<<<<<< HEAD
     razzle-dev-utils "^2.0.0-alpha.7"
+=======
+    razzle-dev-utils "^2.0.0-alpha.11"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
     react-dev-utils "^4.0.0"
     react-error-overlay "^2.0.0"
     start-server-webpack-plugin "2.2.5"
@@ -5873,8 +5916,8 @@ razzle@^2.0.0-alpha.7:
     thread-loader "1.1.5"
     uglifyjs-webpack-plugin "1.2.4"
     url-loader "^1.0.1"
-    webpack "^4.4.1"
-    webpack-dev-server "3.0.0"
+    webpack "^4.6.0"
+    webpack-dev-server-speedy "^3.1.1"
     webpack-node-externals "1.6.0"
     whatwg-fetch "^2.0.3"
 
@@ -6717,7 +6760,11 @@ stream-each@^1.1.0:
 
 stream-http@^2.7.2:
   version "2.8.2"
+<<<<<<< HEAD
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/stream-http/-/stream-http-2.8.2.tgz#4126e8c6b107004465918aa2fc35549e77402c87"
+=======
+  resolved "https://registry.yarnpkg.com/stream-http/-/stream-http-2.8.2.tgz#4126e8c6b107004465918aa2fc35549e77402c87"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
   dependencies:
     builtin-status-codes "^3.0.0"
     inherits "^2.0.1"
@@ -7149,9 +7196,15 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
 
+<<<<<<< HEAD
 url-join@^2.0.2:
   version "2.0.5"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/url-join/-/url-join-2.0.5.tgz#5af22f18c052a000a48d7b82c5e9c2e2feeda728"
+=======
+url-join@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/url-join/-/url-join-4.0.0.tgz#4d3340e807d3773bda9991f8305acdcc2a665d2a"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
 
 url-loader@^1.0.1:
   version "1.0.1"
@@ -7287,21 +7340,33 @@ webidl-conversions@^4.0.0:
   version "4.0.2"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
+<<<<<<< HEAD
 webpack-dev-middleware@2.0.6:
   version "2.0.6"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/webpack-dev-middleware/-/webpack-dev-middleware-2.0.6.tgz#a51692801e8310844ef3e3790e1eacfe52326fd4"
+=======
+webpack-dev-middleware@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-3.0.1.tgz#7ffd6d0192883c83d3f262e8d7dec822493c6166"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
   dependencies:
     loud-rejection "^1.6.0"
     memory-fs "~0.4.1"
     mime "^2.1.0"
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
-    url-join "^2.0.2"
+    url-join "^4.0.0"
     webpack-log "^1.0.1"
 
+<<<<<<< HEAD
 webpack-dev-server@3.0.0:
   version "3.0.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/webpack-dev-server/-/webpack-dev-server-3.0.0.tgz#0ca2d293dc7a7b1a94fc5fd62cfca2a9fa61bcf7"
+=======
+webpack-dev-server-speedy@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server-speedy/-/webpack-dev-server-speedy-3.1.1.tgz#51d4b863b2f51b176a42b0f15161faa7a7d98894"
+>>>>>>> f65b5b4fc84a51d39b043efbb013733df8f32945
   dependencies:
     ansi-html "0.0.7"
     array-includes "^3.0.3"
@@ -7328,10 +7393,11 @@ webpack-dev-server@3.0.0:
     spdy "^3.4.1"
     strip-ansi "^3.0.0"
     supports-color "^5.1.0"
-    webpack-dev-middleware "2.0.6"
+    webpack-dev-middleware "3.0.1"
+    webpack-log "^1.1.2"
     yargs "9.0.1"
 
-webpack-log@^1.0.1:
+webpack-log@^1.0.1, webpack-log@^1.1.2:
   version "1.2.0"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/webpack-log/-/webpack-log-1.2.0.tgz#a4b34cda6b22b518dbb0ab32e567962d5c72a43d"
   dependencies:
@@ -7351,7 +7417,7 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.4.1:
+webpack@^4.6.0:
   version "4.8.1"
   resolved "http://10.210.200.230:8081/repository/williamhill-npm/webpack/-/webpack-4.8.1.tgz#59e38f99f2751c931dd09a035aba7bec4b5f916e"
   dependencies:
