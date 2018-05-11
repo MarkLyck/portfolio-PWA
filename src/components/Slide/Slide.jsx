@@ -44,7 +44,7 @@ class Slide extends React.Component {
     }
 
     render() {
-        const { slide, index, handleVisibilityChange } = this.props
+        const { slide, index } = this.props
         return (
             <ShowcaseContainer>
                 <LeftContent
