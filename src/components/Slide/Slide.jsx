@@ -20,13 +20,14 @@ const Link = styled.a`
     padding: 18px 32px;
     border-radius: 50px;
     margin: 16px auto 0 0;
-    transition: all 0.1s ease-in;
+    transition: all 0.1s;
     border: 1px solid ${props => props.color};
     color: #FFFFFF;
     text-shadow: none;
     box-shadow: 0 8px 0 0 ${props => darken(0.15, props.color)};
     &:hover {
         color: #FFFFFF;
+        text-decoration: none;
         border: 1px solid ${props => darken(-0.05, props.color)};
         background-color: ${props => darken(-0.05, props.color)};
     }
