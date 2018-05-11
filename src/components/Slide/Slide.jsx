@@ -26,10 +26,12 @@ const Link = styled.a`
     text-shadow: none;
     box-shadow: 0 8px 0 0 ${props => darken(0.15, props.color)};
     &:hover {
+        color: #FFFFFF;
         border: 1px solid ${props => darken(-0.05, props.color)};
         background-color: ${props => darken(-0.05, props.color)};
     }
     &:active {
+        color: #FFFFFF;
         transform: translateY(0.25rem);
         box-shadow: 0 0 0 0 ${props => darken(0.1, props.color)};
     }
