@@ -1,12 +1,5 @@
 import app from './server';
 import http from 'http';
-import WebFont from 'webfontloader';
-
-WebFont.load({
-    google: {
-        families: ['Abril+ Fatface']
-    }
-});
 
 const server = http.createServer(app);
 
