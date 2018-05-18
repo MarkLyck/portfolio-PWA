@@ -12,6 +12,7 @@ export default [
                     </span>),
         website: 'https://formulastocks.com',
         image: '/media/fs_screenshot.jpg',
+        webpImage: '/media/fs_screenshot.webp',
         color: '#27a5f9',
     },
     {
@@ -24,6 +25,7 @@ export default [
                     </span>),
         website: 'https://marklyck.github.io/Bring-the-Band',
         image: '/media/btb_screenshot.png',
+        webpImage: '/media/btb_screenshot.webp',
         color: '#2bba87',
     },
     {
@@ -37,6 +39,7 @@ export default [
                     </span>),
         website: '',
         image: '/media/contact.jpg',
+        webpImage: '/media/contact.webp',
         color: '#ff4d5a',
     },
 ]

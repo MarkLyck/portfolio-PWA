@@ -57,7 +57,7 @@ class Slide extends React.Component {
     // }
 
     render() {
-        const { slide, index } = this.props
+        const { slide, index, imageType } = this.props
         return (
             <ShowcaseContainer>
                 <LeftContent
@@ -70,7 +70,7 @@ class Slide extends React.Component {
                         </React.Fragment>
                     }
                 />
-                <Showcase image={slide.image} number={String(index + 1).padStart(2, '0')} color={slide.color} />
+                <Showcase webpImage={slide.webpImage} image={slide.image} imageType={imageType} number={String(index + 1).padStart(2, '0')} color={slide.color} />
             </ShowcaseContainer>
         )
     }

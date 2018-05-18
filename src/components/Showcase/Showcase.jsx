@@ -58,20 +58,22 @@ const PageNumber = styled.p`
     text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
 `
 
+// check_webp_feature:
+//   'feature' can be one of 'lossy', 'lossless', 'alpha' or 'animation'.
+//   'callback(feature, result)' will be passed back the detection result (in an asynchronous way!)
+
 class Showcase extends Component {
-    state = { loadImages: false }
-    componentDidMount() {
-        this.setState({ loadImages: true })
-    }
-
     render() {
-        const { loadImages } = this.state
-        const { image, number, color } = this.props
+        const { imageType, image, webpImage, number, color } = this.props
 
+        let imageSrc = ''
+        if (imageType === 'normal') { imageSrc = image }
+        else if (imageType === 'webp') { imageSrc = webpImage }
+    
         return (
             <Motion defaultStyle={{ scale: 0 }} style={{ scale: spring(1, { stiffness: 50, damping: 17 })}}>
                 {value => (
-                    <Content image={loadImages ? image : ''} style={{ transform: `scale(${value.scale})`}}>
+                    <Content image={imageSrc} style={{ transform: `scale(${value.scale})`}}>
                         <ImageUnderlayer>
                             <Motion defaultStyle={{ x: -10 }} style={{ x: spring(100, {stiffness: 25, damping: 17}) }}>
                                 {value => (
