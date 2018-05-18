@@ -1,4 +1,5 @@
 import React from 'react'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 export default [
     {
@@ -29,8 +30,10 @@ export default [
         id: '2',
         title: <span>Let's<br/>Get in Touch</span>,
         subtitle: (<span>
-                        hello@markdid.it
-                        <br/>
+                        <FontAwesomeIcon icon="envelope" /> <a href="mailto:hello@markdid.it">hello@markdid.it</a><br/>
+                        <FontAwesomeIcon icon={['fab', 'linkedin']} /> <a href="https://www.linkedin.com/in/mlyck/" target="_blank" rel="noopener noreferrer" >LinkedIn</a><br/>
+                        <FontAwesomeIcon icon={['fab', 'twitter']} /> <a href="https://twitter.com/MarkLyck" target="_blank" rel="noopener noreferrer" >Twitter</a><br/>
+                        <FontAwesomeIcon icon={['fab', 'github']} /> <a href="https://github.com/MarkLyck" target="_blank" rel="noopener noreferrer" >GitHub</a><br/>
                     </span>),
         website: '',
         image: '/media/contact.jpg',

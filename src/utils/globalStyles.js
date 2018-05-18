@@ -131,6 +131,12 @@ injectGlobal`
 
     a {
         text-decoration: none;
+        color: #fff;
+        &:hover {
+            cursor: pointer;
+            color: #27a5f9;
+            text-decoration: underline;
+        }
     }
 
     button {
