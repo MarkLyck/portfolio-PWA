@@ -5,7 +5,8 @@ import { Motion, spring } from 'react-motion'
 import Slide from 'components/Slide'
 import ScrollNavigation from 'components/ScrollNavigation'
 import Hero from './00_Hero'
-import slides from '../common/slides'
+import slides from 'common/slides'
+import { check_webp_feature } from 'common/featureTests'
 
 import stars from './images/stars.svg'
 import moonlight from './images/moonlight.svg'
@@ -87,23 +88,7 @@ const StarImageContainer = styled.div`
     align-items: center;
 `
 
-function check_webp_feature(feature, callback) {
-    var kTestImages = {
-        lossy: "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
-        lossless: "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
-        alpha: "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
-        animation: "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"
-    };
-    var img = new Image();
-    img.onload = function () {
-        var result = (img.width > 0) && (img.height > 0);
-        callback(feature, result);
-    };
-    img.onerror = function () {
-        callback(feature, false);
-    };
-    img.src = "data:image/webp;base64," + kTestImages[feature];
-}
+
 
 class Home extends React.Component {
     state = {
@@ -159,7 +144,7 @@ class Home extends React.Component {
                     />)
                 )}
 
-                {this['1'] ? <ScrollNavigation keys={slides.map(s => s.id)} sections={slides.map(slide => this[slide.id])} heroSection={this.heroSection} /> : ''}
+                {<ScrollNavigation keys={slides.map(s => s.id)} sections={slides.map(slide => this[slide.id])} heroSection={this.heroSection} />}
 
                 <MoonLightBackground>
                     <MoonLightContainer>
