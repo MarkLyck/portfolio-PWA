@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'react-emotion'
 import { Motion, spring } from 'react-motion'
 
@@ -58,34 +58,44 @@ const PageNumber = styled.p`
     text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
 `
 
-const Showcase = ({ image, number, color, animate }) => {
-    return (
-        <Motion defaultStyle={{ scale: 0 }} style={{ scale: spring(1, { stiffness: 50, damping: 17 })}}>
-            {value => (
-                <Content image={image} style={{ transform: `scale(${value.scale})`}}>
-                    <ImageUnderlayer>
-                        <Motion defaultStyle={{ x: -10 }} style={{ x: spring(100, {stiffness: 25, damping: 17}) }}>
-                            {value => (
-                                <ImageColorTransition color={color} style={{ transform: `translateX(${value.x}%)`}} />
-                            )}
-                        </Motion>
-                        <Motion defaultStyle={{ x: -20 }} style={{ x: spring(100, {stiffness: 35, damping: 17}) }}>
-                            {value => (
-                                <ImageUnderlayerBackground style={{ transform: `translateX(${value.x}%)`}} />
-                            )}
-                        </Motion>
-                    </ImageUnderlayer>
-                    <PageNumBerContainer>
-                        <Motion defaultStyle={{ y: 100 }} style={{ y: spring(0, { stiffness: 25, damping: 17 }) }}>
-                            {value => (
-                                <PageNumber style={{ transform: `translateY(${value.y}%)`}}> {number}</PageNumber>
-                            )}
-                        </Motion>
-                    </PageNumBerContainer>
-                </Content>
-            )}
-        </Motion>
-    )
+class Showcase extends Component {
+    state = { loadImages: false }
+    componentDidMount() {
+        this.setState({ loadImages: true })
+    }
+
+    render() {
+        const { loadImages } = this.state
+        const { image, number, color } = this.props
+
+        return (
+            <Motion defaultStyle={{ scale: 0 }} style={{ scale: spring(1, { stiffness: 50, damping: 17 })}}>
+                {value => (
+                    <Content image={loadImages ? image : ''} style={{ transform: `scale(${value.scale})`}}>
+                        <ImageUnderlayer>
+                            <Motion defaultStyle={{ x: -10 }} style={{ x: spring(100, {stiffness: 25, damping: 17}) }}>
+                                {value => (
+                                    <ImageColorTransition color={color} style={{ transform: `translateX(${value.x}%)`}} />
+                                )}
+                            </Motion>
+                            <Motion defaultStyle={{ x: -20 }} style={{ x: spring(100, {stiffness: 35, damping: 17}) }}>
+                                {value => (
+                                    <ImageUnderlayerBackground style={{ transform: `translateX(${value.x}%)`}} />
+                                )}
+                            </Motion>
+                        </ImageUnderlayer>
+                        <PageNumBerContainer>
+                            <Motion defaultStyle={{ y: 100 }} style={{ y: spring(0, { stiffness: 25, damping: 17 }) }}>
+                                {value => (
+                                    <PageNumber style={{ transform: `translateY(${value.y}%)`}}> {number}</PageNumber>
+                                )}
+                            </Motion>
+                        </PageNumBerContainer>
+                    </Content>
+                )}
+            </Motion>
+        )
+    }
 }
 
 export default Showcase
