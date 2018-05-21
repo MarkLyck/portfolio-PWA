@@ -36,8 +36,7 @@ export default [
                         <FontAwesomeIcon icon={['fab', 'linkedin']} /> <a href="https://www.linkedin.com/in/mlyck/" target="_blank" rel="noopener noreferrer" >LinkedIn</a><br/>
                         <FontAwesomeIcon icon={['fab', 'twitter']} /> <a href="https://twitter.com/MarkLyck" target="_blank" rel="noopener noreferrer" >Twitter</a><br/>
                         <FontAwesomeIcon icon={['fab', 'github']} /> <a href="https://github.com/MarkLyck" target="_blank" rel="noopener noreferrer" >GitHub</a><br/>
-                        <FontAwesomeIcon icon={['fab', 'github']} /> <a href="https://github.com/MarkLyck" target="_blank" rel="noopener noreferrer" >GitHub</a><br/>
-                        <FontAwesomeIcon icon={['fab', 'file-pdf']} /> <a href="/files/Resume_Mark_Lyck.pdf" target="_blank" rel="noopener noreferrer" >Résumé</a><br/>
+                        <FontAwesomeIcon icon={['fas', 'file-pdf']} style={{ margin: '0 3px' }}/> <a href="/files/Resume_Mark_Lyck.pdf" target="_blank" rel="noopener noreferrer" >Résumé</a><br/>
                     </span>),
         website: '',
         image: '/media/contact.jpg',
