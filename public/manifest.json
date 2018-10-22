@@ -1,0 +1,21 @@
+{
+    "name": "Mark Lyck Portfolio / Web developer",
+    "short_name": "Mark Lyck",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#0B182A",
+    "background_color": "#0B182A",
+    "description": "Mark Lyck Portfolio / Web developer",
+    "icons": [
+        {
+            "src": "/icons/touch/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image\/png"
+        },
+        {
+            "src": "/icons/touch/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image\/png"
+        }
+    ]
+}

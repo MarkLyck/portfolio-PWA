@@ -15,6 +15,9 @@ injectGlobal`
         color:#000;
         background:#FFF;
     }
+    body{
+        overflow-x: hidden;
+    }
     /*
         TODO remove settings on BODY since we can't namespace it.
     */
@@ -124,6 +127,23 @@ injectGlobal`
     /*because legend doesn't inherit in IE */
     legend {
         color:#000;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        &:hover {
+            cursor: pointer;
+            color: #27a5f9;
+            text-decoration: underline;
+        }
+    }
+
+    button {
+        outline: none;
+        &:hover {
+            cursor: pointer;
+        }
     }
     /* YUI CSS Detection Stamp */
     #yui3-css-stamp.cssreset { display: none; }
